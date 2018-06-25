@@ -1,0 +1,171 @@
+## some random commands that are used, and we can keep them here
+
+--- this file and a couple others added to (1drive-Documents)
+ - 6/15 eod
+
+##################################### tensorflow ######################################
+# https://www.tensorflow.org/install/install_linux
+
+when using tensofrlow, you have to activate and deactivate the virtual environments
+#to activate
+source ~/tensorflow/bin/activate 
+
+# to deactivate -- run from environment
+deactivate
+
+
+##################################### SQL #############################################
+
+config file: /etc/freetds/freetds.conf
+
+trying to set up MSQL = [egServer70]
+
+test connection:
+
+tsql -S egServer70 -U sasuser -P s!ssy
+
+[egServer70]                                                                                                  │
+        host = 172.25.161.208                                                                                 │
+        port = 1433                                                                                           │
+        tds version = 7.4
+
+#make sure you get the friggen password correct
+
+
+
+###################################### emacs file #############################
+
+
+# here is the init file where you can customize stuff and add repos
+~/.emacs, ~/.emacs.el
+
+
+-----Few commands
+- kill emacs
+C-x C-c
+
+- kill buffer
+C-x k
+
+- evaluate org-mode code block
+C-c C-c 
+
+- check init file used
+C-x C-f ~/.emacs RET
+
+- check/find/search variable value
+C-h v (describe-variable)
+
+
+-- search for file
+find ~/.m2 -name "*refactor-nrepl*"
+
+-- I had to remove the clj-refactor from my elpa directory (which was automatically
+  install via the init.el file that i was using, and it worked beautifully)
+
+
+
+
+--- there is an error currently for the following file
+/home/bpinney/lisp/cfg-paredit.el
+
+-- install lein
+wget "https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein" 
+
+
+-- full path to development org-mode
+/home/bpinney/elisp/org-mode/lisp
+
+---- some notes from the cjl project
+[clojure-complete "0.2.4" :exclusions [[org.clojure/clojure]]]
+[org.clojure/clojure "1.8.0"]
+[org.clojure/tools.nrepl "0.2.12" :exclusions [[org.clojure/clojure]]]
+
+Leiningen 2.8.1 on Java 1.8.0_171 OpenJDK 64-Bit Server VM
+
+- install emacs
+wget "ftp://ftp.gnu.org/pub/gnu/emacs/emacs-26.1.tar.gz"
+tar -zxvf emacs-26.11.tar.gz
+followed -- https://www.gnu.org/software/emacs/manual/html_node/efaq/Installing-Emacs.html
+
+
+
+ [cider/cider-nrepl "0.17.0"]
+[clojure-complete "0.2.4" :exclusions [[org.clojure/clojure]]]
+[org.clojure/clojure "1.8.0"]
+ble to resolve var: refactor-nrepl.middleware/wrap-refactor in this context
+
+
+
+copy org file to new folder
+ 
+cp /home/bpinney/modeling/python_sand/code/2.org /home/bpinney/modeling/python_sand/code/clojure-examples: 
+
+
+--header options that i am not sure is needed
+#+PROPERTY: session *R*
+#+PROPERTY: results both
+
+
+
+
+################################################## R ###################################
+
+
+location of .Rprofile
+
+/etc/R/Rprofile.site
+
+
+-- need to add for graphics rupport for emacs
+old <- getOption("defaultPackages")
+options(defaultPackages = c(old, "tikzDevice"))
+
+library(neuralnet)
+setwd("~/modeling/python_sand/code")
+x <- load(file = paste0("../data/00_Neural_Net_Pkgs_model_10.rda"))
+
+
+
+################################# org mode ###################################
+
+
+
+
+
+
+################################ random notes ##################################
+
+
+
+
+
+################################### caffe #########################################
+
+
+pages that helped debug
+
+https://github.com/BVLC/caffe/issues/4843
+https://github.com/BVLC/caffe/wiki/Commonly-encountered-build-issues
+https://groups.google.com/forum/#!topic/caffe-users/3NHh06RhWd4
+
+#after compilation, place the caffe directory in python path
+
+cp -r /home/bpinney/modeling/python_sand/packages/caffe/distribute/python/caffe  /usr/lib/python3/dist-packages/
+
+
+#add a custom variable for PYTHONPATH in ~/.bashrc
+vim ~/.bashrc
+(edit last line)
+
+
+#also pointed emacs to python 3 instead of two
+#also had to install a few packages
+
+#visualize network in caffe
+python /home/bpinney/modeling/python_sand/packages/caffe/python/draw_net.py myconvnet.prototxt /home/bpinney/modeling/python_sand/code/caffe_1/my_net.prototxt /home/bpinney/modeling/python_sand/code/caffe_1/my_net.png
+
+
+
+
+
